@@ -1,3 +1,4 @@
+import { isPersistedState } from "../helper";
 import { GIPHY_API, GIPHY_API_SINGLE_GIF } from "./config";
 
 const API = {
@@ -12,13 +13,14 @@ const API = {
       console.log(error);
     }
   },
-  fetchGif: async (gifId) => {
+  findGif: async (gifId,searchTerm) => {
     try {
+      const values = isPersistedState(searchTerm);
       const response = await (
         await fetch(GIPHY_API_SINGLE_GIF.replace(/<ID>/, gifId))
       ).json();
       const { data } = response;
-      console.log(data);
+
       return data;
     } catch (error) {
       console.log(error);
