@@ -1,11 +1,8 @@
 import React from "react";
 
-import { useState } from "react";
 import "../../App.css";
-
-import API from "../../helpers/API";
+import ResultList from "../ResultList/ResultList";
 import Loader from "../Loader";
-import Thumb from "../Thumb";
 import {
   Content,
   InputContainer,
@@ -24,7 +21,6 @@ export const SearchBox = ({
 }) => {
   return (
     <>
-      {/* <div className="header"> */}
       <Content>
         <InputContainer>
           <Input
@@ -36,32 +32,24 @@ export const SearchBox = ({
           />
         </InputContainer>
         <ButtonContainer>
-          <SearchButton className="search_btn" onClick={handleSearch}>
+          <SearchButton
+            className="search_btn"
+            onClick={handleSearch}
+            disabled={!searchTerm}
+          >
             Search
           </SearchButton>
         </ButtonContainer>
       </Content>
-      {/* </div> */}
-
-      <div className="result">
-        {isLoading ? (
-          <Loader />
-        ) : isError ? (
-          <div className="error">
-            <p>Something went wrong</p>
-          </div>
-        ) : (
-          <div className="list">
-            {gifs.map((gif) => (
-              <Thumb
-                key={gif.id}
-                image={gif.images.downsized_medium.url}
-                gifId={gif.id}
-              />
-            ))}
-          </div>
-        )}
-      </div>
+      {isLoading ? (
+        <Loader />
+      ) : isError ? (
+        <div className="error">
+          <p>Something went wrong</p>
+        </div>
+      ) : (
+        <ResultList gifs={gifs} isLoading={isLoading} isError={isError} />
+      )}
     </>
   );
 };

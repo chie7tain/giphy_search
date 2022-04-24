@@ -4,9 +4,4 @@ const GIPHY_API = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=<se
 
 const GIPHY_API_SINGLE_GIF = `https://api.giphy.com/v1/gifs/<ID>?api_key=${API_KEY}`;
 
-
-
-export {
-  GIPHY_API,
-  GIPHY_API_SINGLE_GIF
-}
+export { GIPHY_API, GIPHY_API_SINGLE_GIF };

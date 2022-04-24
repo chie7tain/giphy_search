@@ -1,5 +1,4 @@
 import React from "react";
-import Thumb from "../Thumb";
 import {
   Wrapper,
   Content,
@@ -10,7 +9,7 @@ import {
 } from "./GifInfo.styles";
 
 const GifInfo = ({ gif }) => {
-  const { title, images, id, rating, source,username } = gif;
+  const { title, images, rating, source, username } = gif;
   const url = images.downsized_large.url;
 
   return (

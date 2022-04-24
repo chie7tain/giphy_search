@@ -16,6 +16,8 @@ export const Content = styled.div`
 export const InputContainer = styled.div`
   width: 100%;
   /* margin: 0 5px; */
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
   @media screen and (max-width: 425px) {
     margin: 0;
     width: 100%;
@@ -28,6 +30,9 @@ export const Input = styled.input`
   text-indent: 5px;
   font-family: "Open Sans", sans-serif;
   border-radius: 7px;
+  background-color: #222;
+  border: 1px solid #424242;
+  color: #fff;
 `;
 export const ButtonContainer = styled.div``;
 export const SearchButton = styled.button`

@@ -11,7 +11,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  const handleSearch = async (e) => {
+ const handleSearch = async (e) => {
     e.preventDefault();
     try {
       searchTerm = searchTerm.trim();
