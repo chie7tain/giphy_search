@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { SearchBox } from "./components/searchBox";
+import { SearchBox } from "./components/SearchBox";
 import Gif from "./components/Gif";
 import NotFound from "./components/NOTFOUND/NotFound";
 import Header from "./components/Header";
@@ -20,7 +20,6 @@ const App = () => {
         setIsError(false);
         let data = await API.fetchGifs(searchTerm);
         sessionStorage.setItem(searchTerm, JSON.stringify(data));
-        console.log(data);
         setIsLoading(false);
         setGifs(data);
       }

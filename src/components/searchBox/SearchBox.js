@@ -6,6 +6,13 @@ import "../../App.css";
 import API from "../../helpers/API";
 import Loader from "../Loader";
 import Thumb from "../Thumb";
+import {
+  Content,
+  InputContainer,
+  ButtonContainer,
+  Input,
+  SearchButton,
+} from "./SearchBox.styles";
 
 export const SearchBox = ({
   searchTerm,
@@ -17,20 +24,24 @@ export const SearchBox = ({
 }) => {
   return (
     <>
-      <div className="header">
-        <div>
-          <input
+      {/* <div className="header"> */}
+      <Content>
+        <InputContainer>
+          <Input
             type="text"
             placeholder="Search for a gif"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             onKeyDown={(e) => (e.code === "Enter" ? handleSearch(e) : null)}
           />
-          <button className="search_btn" onClick={handleSearch}>
+        </InputContainer>
+        <ButtonContainer>
+          <SearchButton className="search_btn" onClick={handleSearch}>
             Search
-          </button>
-        </div>
-      </div>
+          </SearchButton>
+        </ButtonContainer>
+      </Content>
+      {/* </div> */}
 
       <div className="result">
         {isLoading ? (

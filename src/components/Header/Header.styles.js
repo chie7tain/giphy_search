@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   color: #fff;
   height: 50px;
   padding: 0 20px;
+  margin: 10px 0;
 `;
 export const Content = styled.header`
   display: flex;

@@ -10,10 +10,7 @@ import {
 } from "./GifInfo.styles";
 
 const GifInfo = ({ gif }) => {
-  const { title, images, id, rating, source } = gif;
-  // const url = images.original.url;
-  console.log(gif);
-  console.log(images.downsized_large.url);
+  const { title, images, id, rating, source,username } = gif;
   const url = images.downsized_large.url;
 
   return (
@@ -24,10 +21,11 @@ const GifInfo = ({ gif }) => {
         </ImageContainer>
         <div>
           <Header>
-            <Text>{title}</Text>
+            <Text>Title: {title}</Text>
           </Header>
           <Text>Rating: {rating}</Text>
           <Text>Source: {source}</Text>
+          <Text>Username: {username}</Text>
         </div>
       </Content>
     </Wrapper>
